@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Get Daily Macro Key</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #0b0e11;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            margin: 0;
+            padding-bottom: 300px;
+            user-select: none; /* Prevents highlighting text */
+            -webkit-user-select: none;
+        }
+        .container {
+            background: #1e2329;
+            padding: 40px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            border: 1px solid #333;
+            max-width: 400px;
+            width: 90%;
+            position: relative;
+            z-index: 10;
+        }
+        h1 { color: #f0b90b; margin-bottom: 10px; }
+        p { color: #848e9c; margin-bottom: 30px; }
+        
+        .btn-main {
+            background-color: #2ebd85;
+            color: black;
+            border: none;
+            padding: 15px 30px;
+            font-size: 18px;
+            font-weight: bold;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%;
+            transition: 0.2s;
+        }
+        .btn-main:hover { background-color: #25a571; }
+
+        #key-display {
+            display: none;
+            margin-top: 20px;
+            background: #000;
+            padding: 15px;
+            border: 1px dashed #f0b90b;
+            font-family: monospace;
+            font-size: 24px;
+            color: #f0b90b;
+            letter-spacing: 2px;
+            word-break: break-all;
+        }
+
+        /* BANNER CONTAINER */
+        .footer-ad-container {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background-color: #161a1e;
+            border-top: 2px solid #f0b90b;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            padding: 15px 0;
+            z-index: 100;
+            min-height: 280px; 
+        }
+        
+        .ad-slot {
+            width: 300px;
+            height: 250px;
+            background-color: #0b0e11;
+            border: 1px dashed #333;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #555;
+            font-size: 12px;
+            flex-shrink: 0;
+        }
+    </style>
+</head>
+<body oncontextmenu="return false;">
+
+    <div class="container">
+        <h1>🔐 Macro Key System</h1>
+        <p>Complete the step below to generate today's access key.</p>
+        
+        <button id="action-btn" class="btn-main" onclick="startProcess()">GET DAILY KEY</button>
+        
+        <div id="key-display">Generating...</div>
+    </div>
+
+    <div class="footer-ad-container">
+        <div class="ad-slot">AD 1</div>
+        <div class="ad-slot">AD 2</div>
+        <div class="ad-slot">AD 3</div>
+        <div class="ad-slot">AD 4</div>
+    </div>
+
+    <script>
+        // --- SECURITY: PREVENT INSPECT ELEMENT ---
+        document.onkeydown = function(e) {
+            // Block F12, Ctrl+Shift+I, Ctrl+Shift+J, Ctrl+U
+            if(event.keyCode == 123) { return false; }
+            if(e.ctrlKey && e.shiftKey && e.keyCode == 'I'.charCodeAt(0)) { return false; }
+            if(e.ctrlKey && e.shiftKey && e.keyCode == 'J'.charCodeAt(0)) { return false; }
+            if(e.ctrlKey && e.keyCode == 'U'.charCodeAt(0)) { return false; }
+        }
+
+        // --- SECURITY: DEBUGGER TRAP ---
+        // If they manage to open the console, this pauses the browser
+        setInterval(function() {
+            var startTime = performance.now();
+            debugger;
+            if (performance.now() - startTime > 100) {
+                // If they are in dev tools, clear the page
+                document.body.innerHTML = "<h1>⚠️ SECURITY ALERT: Close DevTools to continue.</h1>";
+            }
+        }, 1000);
+
+        // --- MAIN LOGIC ---
+        function startProcess() {
+            // YOUR DIRECT LINK
+            const adsterraLink = "https://directsinew.com/hqd21kea?key=fe48d53bce77ef86d5ff595fb5b51fa6"; 
+
+            window.open(adsterraLink, "_blank");
+
+            const btn = document.getElementById("action-btn");
+            btn.innerText = "VERIFYING...";
+            btn.style.backgroundColor = "#555";
+            btn.disabled = true;
+
+            setTimeout(() => {
+                const key = _0x1a2b(); // Obfuscated function call name
+                document.getElementById("key-display").innerText = key;
+                document.getElementById("key-display").style.display = "block";
+                btn.style.display = "none";
+            }, 15000); 
+        }
+
+        // Renamed function to look confusing
+        function _0x1a2b() {
+            const _d = new Date();
+            const _0 = _d.getDate();
+            const _1 = _d.getMonth() + 1;
+            const _p1 = (_0 * 33) + (_1 * 12); 
+            const _p2 = "X" + (_0 + 5);
+            return `KEY-${_p1}-${_p2}`;
+        }
+    </script>
+
+</body>
+</html>
